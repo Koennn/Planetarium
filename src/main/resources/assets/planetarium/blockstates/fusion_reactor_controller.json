@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": {
+      "model": "planetarium:fusion_reactor_controller"
+    },
+    "inventory": {
+      "model": "planetarium:fusion_reactor_controller",
+      "transform": "forge:default-block"
+    }
+  }
+}

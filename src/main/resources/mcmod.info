@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "planetarium",
+    "name": "Planetarium",
+    "description": "Planetarium mod",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Koenn"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

@@ -1,0 +1,104 @@
+---- Minecraft Crash Report ----
+// Quite honestly, I wouldn't worry myself about that.
+
+Time: 7/1/18 10:23 AM
+Description: Ticking player
+
+java.lang.RuntimeException: Slot 36 not in valid range - [0,36)
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:208)
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:73)
+	at net.minecraftforge.items.SlotItemHandler.getStack(SlotItemHandler.java:79)
+	at net.minecraft.inventory.Container.detectAndSendChanges(Container.java:97)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdate(EntityPlayerMP.java:365)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2180)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2139)
+	at net.minecraft.world.WorldServer.tickPlayers(WorldServer.java:672)
+	at net.minecraft.world.World.updateEntities(World.java:1915)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:208)
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:73)
+	at net.minecraftforge.items.SlotItemHandler.getStack(SlotItemHandler.java:79)
+	at net.minecraft.inventory.Container.detectAndSendChanges(Container.java:97)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdate(EntityPlayerMP.java:365)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2180)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2139)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 0
+	Entity Name: Player75
+	Entity's Exact location: 384.46, 56.00, -781.47
+	Entity's Block location: World: (384,56,-782), Chunk: (at 0,3,2 in 24,-49; contains blocks 384,0,-784 to 399,255,-769), Region: (0,-2; contains chunks 0,-64 to 31,-33, blocks 0,0,-1024 to 511,255,-513)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.WorldServer.tickPlayers(WorldServer.java:672)
+	at net.minecraft.world.World.updateEntities(World.java:1915)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 1 total; [EntityPlayerMP['Player75'/0, l='New World', x=384.46, y=56.00, z=-781.47]]
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: -7307240609593045408
+	Level generator: ID 01 - flat, ver 0. Features enabled: true
+	Level generator options: 3;minecraft:bedrock,3*minecraft:stone,52*minecraft:sandstone;2;
+	Level spawn location: World: (376,4,-770), Chunk: (at 8,0,14 in 23,-49; contains blocks 368,0,-784 to 383,255,-769), Region: (0,-2; contains chunks 0,-64 to 31,-33, blocks 0,0,-1024 to 511,255,-513)
+	Level time: 104941 game time, 1180 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 32866 (now: false), thunder time: 82007 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_161, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 378069128 bytes (360 MB) / 1787822080 bytes (1705 MB) up to 3810525184 bytes (3634 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.4.2725 7 mods loaded, 7 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID           | Version      | Source                                      | Signature |
+	|:--------- |:------------ |:------------ |:------------------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft    | 1.12.2       | minecraft.jar                               | None      |
+	| UCHIJAAAA | mcp          | 9.42         | minecraft.jar                               | None      |
+	| UCHIJAAAA | FML          | 8.0.99.99    | forgeSrc-1.12.2-14.23.4.2725.jar            | None      |
+	| UCHIJAAAA | forge        | 14.23.4.2725 | forgeSrc-1.12.2-14.23.4.2725.jar            | None      |
+	| UCHIJAAAA | planetarium  | 1.0          | Planetarium                                 | None      |
+	| UCHIJAAAA | toughasnails | 3.1.0.121    | ToughAsNails-1.12.2-3.1.0.121-universal.jar | None      |
+	| UCHIJAAAA | appleskin    | 1.0.9        | AppleSkin-mc1.12-1.0.9.jar                  | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player75'/0, l='New World', x=384.46, y=56.00, z=-781.47]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

@@ -1,0 +1,11 @@
+item.nutrition_bar.name=Nutrition Bar
+item.sealed_mre.name=Air-Sealed MRE
+item.sealed_soup.name=Air-Sealed Soup
+item.jelly_bean.name=Jelly Bean
+
+tile.radioactive_ice.name=Radioactive Ice
+tile.crate.name=Crate
+tile.fusion_reactor.name=Minature Fusion Reactor
+tile.fusion_reactor_controller.name=Minature Fusion Reactor Base
+
+itemGroup.planetarium=Planetarium

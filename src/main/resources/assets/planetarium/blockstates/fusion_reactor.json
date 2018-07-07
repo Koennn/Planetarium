@@ -1,0 +1,17 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all": "planetarium:blocks/fusion_reactor"
+    }
+  },
+  "variants": {
+    "normal": {
+      "model": "planetarium:fusion_reactor"
+    },
+    "inventory": {
+      "model": "planetarium:fusion_reactor",
+      "transform": "forge:default-block"
+    }
+  }
+}
